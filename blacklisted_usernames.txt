@@ -940,7 +940,6 @@ zoomcar India
 (?-i:^Eco Cleans$)
 ^amelia\W*alby$
 ^\w{4,5}2ch$
-^Shakib\W*Khan(pust)?$
 ^emily\W*snail$(?#username who posts spam about disk-partition.com)
 ^directmacro$
 (?-i:^softwaresupply$)
@@ -1235,3 +1234,10 @@ carelab[sz]
 (?-i:^55555 FIVE FIVE FIVE FIVE FIVE$)
 ^Hong se de guai guai$
 ^Online quran classes$
+^agya vapis$
+(?-i:^Cash vireet$)
+(?-i:^Cash vireet‭$)
+(?-i:^Room Room$)
+(?-i:^NutraX Shop$)
+^(?-i:Dogherime Wall)$
+(?-i:^Credi Hisab$)
