@@ -12,7 +12,7 @@ import websocket
 import chatcommunicate
 import datahandling
 from globalvars import GlobalVars
-from helpers import log, add_to_global_bodyfetcher_queue_in_new_thread, recover_websocket
+from helpers import add_to_global_bodyfetcher_queue_in_new_thread, log, recover_websocket
 from parsing import fetch_post_id_and_site_from_url
 from tasks import Tasks
 
