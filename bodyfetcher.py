@@ -1,25 +1,25 @@
 # coding=utf-8
+import copy
 import json
 import time
 import threading
-import copy
+from datetime import datetime
 from itertools import chain
 from operator import itemgetter
-from datetime import datetime
 
-import requests
 import psutil
+import requests
 
-from globalvars import GlobalVars
-from spamhandling import handle_spam, check_if_spam
-from datahandling import (add_or_update_api_data, clear_api_data, schedule_store_bodyfetcher_queue,
-                          schedule_store_bodyfetcher_max_ids, add_queue_timing_data)
+import recently_scanned_posts as rsp
 from chatcommunicate import tell_rooms_with
 from classes import Post, PostParseError
+from datahandling import (add_or_update_api_data, clear_api_data, schedule_store_bodyfetcher_queue,
+                          schedule_store_bodyfetcher_max_ids, add_queue_timing_data)
+from globalvars import GlobalVars
 from helpers import (log, log_current_thread, append_to_current_thread_name,
                      convert_new_scan_to_spam_result_if_new_reasons, add_to_global_bodyfetcher_queue_in_new_thread,
                      get_se_api_default_params_questions_answers_posts_add_site, get_se_api_url_for_route)
-import recently_scanned_posts as rsp
+from spamhandling import handle_spam, check_if_spam
 from tasks import Tasks
 
 
