@@ -4,7 +4,7 @@
 
 import sys
 
-from excepthook import uncaught_exception, install_thread_excepthook
+from excepthook import install_thread_excepthook, uncaught_exception
 
 
 sys.excepthook = uncaught_exception
