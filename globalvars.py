@@ -6,7 +6,7 @@ import subprocess as sp
 import sys
 import threading
 from collections import namedtuple
-from configparser import NoOptionError, ConfigParser
+from configparser import ConfigParser, NoOptionError
 from datetime import datetime
 from hashlib import md5
 from html import unescape
@@ -17,7 +17,7 @@ import regex
 
 if 'windows' in platform.platform().lower():
     # noinspection PyPep8Naming
-    from _Git_Windows import git, GitError
+    from _Git_Windows import GitError, git
 else:
     # noinspection PyUnresolvedReferences
     from sh.contrib import git
