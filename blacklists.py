@@ -8,7 +8,7 @@ import regex
 import yaml
 
 from globalvars import GlobalVars
-from helpers import log, log_current_exception, color, pluralize
+from helpers import color, log, log_current_exception, pluralize
 
 
 def load_blacklists():
