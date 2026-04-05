@@ -22,8 +22,8 @@ import datahandling
 import metasmoke
 from chatexchange_extension import Client
 from globalvars import GlobalVars
-from helpers import log, redact_passwords, log_current_exception
-from parsing import fetch_post_id_and_site_from_url, fetch_post_url_from_msg_content, fetch_owner_url_from_msg_content
+from helpers import log, log_current_exception, redact_passwords
+from parsing import fetch_owner_url_from_msg_content, fetch_post_id_and_site_from_url, fetch_post_url_from_msg_content
 from socketscience import SocketScience
 from tasks import Tasks
 
