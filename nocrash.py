@@ -8,7 +8,7 @@ import os
 import platform
 import subprocess as sp
 import sys
-from time import sleep, gmtime
+from time import gmtime, sleep
 
 on_windows = 'windows' in platform.platform().lower()
 if on_windows:
