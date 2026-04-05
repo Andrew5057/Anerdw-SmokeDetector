@@ -1,11 +1,11 @@
-from typing import Union
-from concurrent.futures import ThreadPoolExecutor
-
-import regex
-import yaml
-import dns.resolver
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor
+from typing import Union
+
+import dns.resolver
+import regex
+import yaml
 
 from globalvars import GlobalVars
 from helpers import log, log_current_exception, color, pluralize
