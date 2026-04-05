@@ -30,8 +30,8 @@ import metasmoke_cache
 import parsing
 import spamhandling
 from gitmanager import GitManager
-from helpers import log, exit_mode, only_blacklists_changed, \
-    only_modules_changed, blacklist_integrity_check, reload_modules, log_current_exception
+from helpers import (blacklist_integrity_check, exit_mode, log, log_current_exception,
+                     only_blacklists_changed, only_modules_changed, reload_modules)
 from socketscience import SocketScience
 
 
