@@ -19,8 +19,8 @@ import requests
 import blacklists
 import metasmoke
 from globalvars import GlobalVars
-from helpers import (ErrorLogs, log, log_current_exception, redact_passwords, get_se_api_default_params,
-                     get_se_api_url_for_route)
+from helpers import (ErrorLogs, get_se_api_default_params, get_se_api_url_for_route, log,
+                     log_current_exception, redact_passwords)
 from parsing import api_parameter_from_link, post_id_from_link
 from tasks import Tasks
 
