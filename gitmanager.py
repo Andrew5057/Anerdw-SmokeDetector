@@ -17,7 +17,7 @@ from helpers import log, log_current_exception, only_blacklists_changed
 
 if GlobalVars.on_windows:
     # noinspection PyPep8Naming
-    from _Git_Windows import git, GitError
+    from _Git_Windows import GitError, git
 else:
     from sh import ErrorReturnCode as GitError
     from sh.contrib import git
