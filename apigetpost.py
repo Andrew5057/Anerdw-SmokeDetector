@@ -1,11 +1,11 @@
 # coding=utf-8
-import requests
-import parsing
-from globalvars import GlobalVars
-import time
 import html
-from helpers import get_se_api_default_params_questions_answers_posts_add_site, get_se_api_url_for_route
+import requests
+import time
 
+from globalvars import GlobalVars
+from helpers import get_se_api_default_params_questions_answers_posts_add_site, get_se_api_url_for_route
+import parsing
 
 class PostData:
     def __init__(self):
