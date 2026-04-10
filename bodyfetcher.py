@@ -17,7 +17,8 @@ from datahandling import (add_or_update_api_data, add_queue_timing_data, clear_a
                           schedule_store_bodyfetcher_max_ids, schedule_store_bodyfetcher_queue)
 from globalvars import GlobalVars
 from helpers import (add_to_global_bodyfetcher_queue_in_new_thread, append_to_current_thread_name,
-                     convert_new_scan_to_spam_result_if_new_reasons, get_se_api_default_params_questions_answers_posts_add_site,
+                     convert_new_scan_to_spam_result_if_new_reasons,
+                     get_se_api_default_params_questions_answers_posts_add_site,
                      get_se_api_url_for_route, log, log_current_thread)
 from spamhandling import check_if_spam, handle_spam
 from tasks import Tasks

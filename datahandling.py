@@ -18,10 +18,10 @@ import requests
 
 import blacklists
 import metasmoke
+import parsing
 from globalvars import GlobalVars
 from helpers import (ErrorLogs, get_se_api_default_params, get_se_api_url_for_route, log,
                      log_current_exception, redact_passwords)
-from parsing import api_parameter_from_link, post_id_from_link
 from tasks import Tasks
 
 
@@ -261,7 +261,7 @@ def update_reason_weights():
 
 
 def resolve_ms_link(post_url):
-    identifier = (api_parameter_from_link(post_url), post_id_from_link(post_url))
+    identifier = (parsing.api_parameter_from_link(post_url), parsing.post_id_from_link(post_url))
     if identifier in GlobalVars.metasmoke_ids:
         if isinstance(GlobalVars.metasmoke_ids[identifier], int):
             ms_url = (GlobalVars.metasmoke_host.rstrip("/") + "/post/{}").format(
