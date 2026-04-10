@@ -1,8 +1,8 @@
+from typing import List
+
 import dns
 import dns.resolver
 import dns.rdatatype
-
-from typing import List
 
 
 def dns_resolve(domain: str, records: List[str] = ['A', 'AAAA']) -> list:
