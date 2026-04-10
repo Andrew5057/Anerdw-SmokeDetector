@@ -13,7 +13,7 @@ import requests
 import recently_scanned_posts as rsp
 from chatcommunicate import tell_rooms_with
 from classes import Post, PostParseError
-from datahandling import (add_queue_timing_data, add_or_update_api_data, clear_api_data,
+from datahandling import (add_or_update_api_data, add_queue_timing_data, clear_api_data,
                           schedule_store_bodyfetcher_max_ids, schedule_store_bodyfetcher_queue)
 from globalvars import GlobalVars
 from helpers import (add_to_global_bodyfetcher_queue_in_new_thread, append_to_current_thread_name,
