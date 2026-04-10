@@ -15,8 +15,6 @@ from datetime import datetime, timedelta
 from glob import glob
 
 import requests
-
-from globalvars import GlobalVars
 # noinspection PyPackageRequirements
 import websocket
 from regex import sub
@@ -30,6 +28,7 @@ import metasmoke_cache
 import parsing
 import spamhandling
 from gitmanager import GitManager
+from globalvars import GlobalVars
 from helpers import (blacklist_integrity_check, exit_mode, log, log_current_exception,
                      only_blacklists_changed, only_modules_changed, reload_modules)
 from socketscience import SocketScience
