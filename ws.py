@@ -26,20 +26,20 @@ from threading import Thread
 
 import dns.resolver
 import requests
-from tld.utils import update_tld_names, TldIOError
+from tld.utils import TldIOError, update_tld_names
 # noinspection PyPackageRequirements
 import websocket
 
 import chatcommands
 import chatcommunicate
 from bodyfetcher import BodyFetcher
-from datahandling import (load_pickle, PICKLE_STORAGE, load_files, filter_auto_ignored_posts,
+from datahandling import (PICKLE_STORAGE, filter_auto_ignored_posts, load_files, load_pickle,
                           refresh_site_id_dict_if_needed_and_get_issues)
 from deletionwatcher import DeletionWatcher
 from editwatcher import EditWatcher
 from flovis import Flovis
 from globalvars import GlobalVars
-from helpers import (exit_mode, log, Helpers, log_exception, add_to_global_bodyfetcher_queue_in_new_thread,
+from helpers import (Helpers, add_to_global_bodyfetcher_queue_in_new_thread, exit_mode, log, log_exception,
                      tell_debug_rooms_recovered_websocket)
 from metasmoke import Metasmoke
 from metasmoke_cache import MetasmokeCache
