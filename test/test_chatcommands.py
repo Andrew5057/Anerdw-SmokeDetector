@@ -9,12 +9,12 @@ import pytest
 import regex
 import requests
 
-import chatcommunicate  # coverage
 import chatcommands
+import chatcommunicate  # coverage
 from apigetpost import api_get_post
-from fake import Fake
 from classes.post import Post
 from datahandling import remove_pickle
+from fake import Fake
 from globalvars import GlobalVars
 from parsing import to_protocol_relative
 
