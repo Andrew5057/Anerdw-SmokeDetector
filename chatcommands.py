@@ -33,9 +33,9 @@ from datahandling import *
 from gitmanager import GitHubManager, GitManager
 # noinspection PyUnresolvedReferences
 from globalvars import GlobalVars
-from helpers import (chunk_list, exit_mode, expand_shorthand_link, get_se_api_default_params,
+from helpers import (chunk_list, exit_mode, expand_shorthand_link, get_bookended_keyword_regex_text_from_entries,
+                     get_non_bookended_keyword_regex_text_from_entries, get_se_api_default_params,
                      get_se_api_default_params_questions_answers_posts_add_site, get_se_api_url_for_route,
-                     get_bookended_keyword_regex_text_from_entries, get_non_bookended_keyword_regex_text_from_entries,
                      keyword_bookend_regex_text, keyword_non_bookend_regex_text, log, log_current_exception,
                      only_blacklists_changed, only_modules_changed, regex_compile_no_cache, reload_modules,
                      remove_regex_comments)
