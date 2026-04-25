@@ -11,7 +11,7 @@ import regex
 import requests
 from requests.auth import HTTPBasicAuth
 
-from blacklists import *
+from blacklists import Blacklist
 from globalvars import GlobalVars
 from helpers import log, log_current_exception, only_blacklists_changed
 
