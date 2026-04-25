@@ -1,6 +1,7 @@
 # coding=utf-8
 import collections
 import os
+import pickle
 import random
 import subprocess
 import sys
@@ -19,6 +20,7 @@ from dns.exception import DNSException
 import datahandling
 import findspam
 import number_homoglyphs
+import parsing
 import phone_numbers
 # noinspection PyUnresolvedReferences
 from apigetpost import PostData, api_get_post
@@ -27,9 +29,8 @@ from blacklists import Blacklist, load_blacklists
 from chatcommunicate import (CmdException, CmdExceptionLongReply, add_room, block_room, command, get_message,
                              get_report_data, is_privileged, is_self, message, tell_rooms, tell_rooms_with)
 from classes import Post
-from classes.feedback import *
+from classes.feedback import FALSE_FEEDBACKS, TRUE_FEEDBACKS, NAA_FEEDBACKS, Feedback
 from classes.dns import dns_resolve
-from datahandling import *
 from gitmanager import GitHubManager, GitManager
 # noinspection PyUnresolvedReferences
 from globalvars import GlobalVars
@@ -40,7 +41,6 @@ from helpers import (chunk_list, exit_mode, expand_shorthand_link, get_bookended
                      only_blacklists_changed, only_modules_changed, regex_compile_no_cache, reload_modules,
                      remove_regex_comments)
 from metasmoke import Metasmoke
-from parsing import *
 from spamhandling import check_if_spam, handle_spam
 from tasks import Tasks
 
@@ -67,12 +67,12 @@ def addblu(msg, user):
     :param user:
     :return: A string
     """
-    uid, val = get_user_from_list_command(user)
+    uid, val = parsing.get_user_from_list_command(user)
 
     if int(uid) > -1 and val != "":
         message_url = "https://chat.{}/transcript/{}?m={}".format(msg._client.host, msg.room.id, msg.id)
 
-        add_blacklisted_user((uid, val), message_url, "")
+        datahandling.add_blacklisted_user((uid, val), message_url, "")
         return "User blacklisted (`{}` on `{}`).".format(uid, val)
     elif int(uid) == -2:
         raise CmdException("Error: {}".format(val))
@@ -89,10 +89,10 @@ def isblu(user):
     :return: A string
     """
 
-    uid, val = get_user_from_list_command(user)
+    uid, val = parsing.get_user_from_list_command(user)
 
     if int(uid) > -1 and val != "":
-        if is_blacklisted_user((uid, val)):
+        if datahandling.is_blacklisted_user((uid, val)):
             return "User is blacklisted (`{}` on `{}`).".format(uid, val)
         else:
             return "User is not blacklisted (`{}` on `{}`).".format(uid, val)
@@ -110,10 +110,10 @@ def rmblu(user):
     :param user:
     :return: A string
     """
-    uid, val = get_user_from_list_command(user)
+    uid, val = parsing.get_user_from_list_command(user)
 
     if int(uid) > -1 and val != "":
-        if remove_blacklisted_user((uid, val)):
+        if datahandling.remove_blacklisted_user((uid, val)):
             return "The user has been removed from the user-blacklist (`{}` on `{}`).".format(uid, val)
         else:
             return "The user is not blacklisted. Perhaps they have already been removed from the blacklist. Please " \
@@ -136,10 +136,10 @@ def addwlu(user):
     :param user:
     :return: A string
     """
-    uid, val = get_user_from_list_command(user)
+    uid, val = parsing.get_user_from_list_command(user)
 
     if int(uid) > -1 and val != "":
-        add_whitelisted_user((uid, val))
+        datahandling.add_whitelisted_user((uid, val))
         return "User whitelisted (`{}` on `{}`).".format(uid, val)
     elif int(uid) == -2:
         raise CmdException("Error: {}".format(val))
@@ -155,10 +155,10 @@ def iswlu(user):
     :param user:
     :return: A string
     """
-    uid, val = get_user_from_list_command(user)
+    uid, val = parsing.get_user_from_list_command(user)
 
     if int(uid) > -1 and val != "":
-        if is_whitelisted_user((uid, val)):
+        if datahandling.is_whitelisted_user((uid, val)):
             return "User is whitelisted (`{}` on `{}`).".format(uid, val)
         else:
             return "User is not whitelisted (`{}` on `{}`).".format(uid, val)
@@ -176,10 +176,10 @@ def rmwlu(user):
     :param user:
     :return: A string
     """
-    uid, val = get_user_from_list_command(user)
+    uid, val = parsing.get_user_from_list_command(user)
 
     if int(uid) != -1 and val != "":
-        if remove_whitelisted_user((uid, val)):
+        if datahandling.remove_whitelisted_user((uid, val)):
             return "User removed from whitelist (`{}` on `{}`).".format(uid, val)
         else:
             return "User is not whitelisted."
@@ -531,7 +531,7 @@ def do_blacklist(blacklist_type, msg, force=False):
     metasmoke_down = False
 
     try:
-        code_permissions = is_code_privileged(msg._client.host, msg.owner.id)
+        code_permissions = datahandling.is_code_privileged(msg._client.host, msg.owner.id)
     except (requests.exceptions.ConnectionError, ValueError, TypeError):
         code_permissions = False  # Because we need the system to assume that we don't have blacklister privs.
         metasmoke_down = True
@@ -637,14 +637,14 @@ def unblacklist(msg, item, alias_used="unwatch"):
 
     metasmoke_down = False
     try:
-        code_privs = is_code_privileged(msg._client.host, msg.owner.id)
+        code_privs = datahandling.is_code_privileged(msg._client.host, msg.owner.id)
     except (requests.exceptions.ConnectionError, ValueError):
         code_privs = False
         metasmoke_down = True
 
     pattern = get_pattern_from_content_source(msg)
     _status, result = GitManager.remove_from_blacklist(
-        rebuild_str(pattern), msg.owner.name, blacklist_type,
+        parsing.rebuild_str(pattern), msg.owner.name, blacklist_type,
         code_privileged=code_privs, metasmoke_down=metasmoke_down)
 
     if not _status:
@@ -669,7 +669,7 @@ def unblacklist(msg, item, alias_used="unwatch"):
 
 @command(int, privileged=True, whole_msg=True, aliases=["accept"])
 def approve(msg, pr_id):
-    code_permissions = is_code_privileged(msg._client.host, msg.owner.id)
+    code_permissions = datahandling.is_code_privileged(msg._client.host, msg.owner.id)
     if not code_permissions:
         raise CmdException("You need blacklist manager privileges to approve pull requests")
 
@@ -719,13 +719,13 @@ def reject(msg, args, alias_used="reject"):
     except IndexError:
         reason = ''
     force = alias_used.split("-")[-1] == "force"
-    code_permissions = is_code_privileged(msg._client.host, msg.owner.id)
+    code_permissions = datahandling.is_code_privileged(msg._client.host, msg.owner.id)
     self_reject = False
     try:
         pr_json = GitHubManager.get_pull_request(pr_id).json()
         if 'body' in pr_json:
             pr_authored_by_rejector = regex.search(r"(?<=/users/)" + str(msg.owner.id),
-                                                   pr_json['body'])
+                                                                    pr_json['body'])
             self_reject = pr_authored_by_rejector is not None
     except Exception as e:
         raise CmdException(str(e))
@@ -954,7 +954,7 @@ def errorlogs(count):
     :param count:
     :return: A string
     """
-    return fetch_lines_from_error_log(count or 2)
+    return datahandling.fetch_lines_from_error_log(count or 2)
 
 
 @command(whole_msg=True, aliases=["ms-status", "ms-down", "ms-up", "ms-down-force", "ms-up-force"], give_name=True)
@@ -1237,7 +1237,7 @@ def sync_remote(msg, alias_used='pull-sync'):
     :param msg:
     :return: A string containing a response message
     """
-    if not is_code_privileged(msg._client.host, msg.owner.id):
+    if not datahandling.is_code_privileged(msg._client.host, msg.owner.id):
         raise CmdException("You don't have blacklist manager privileges to run this command.")
     if 'force' not in alias_used:
         raise CmdException("This command is deprecated, append `-force` if you really need to do that.")
@@ -1255,7 +1255,7 @@ def sync_remote_hard(msg, alias_used='pull-sync-hard'):
     :param msg:
     :return: A string containing a response message or None
     """
-    if not is_code_privileged(msg._client.host, msg.owner.id):
+    if not datahandling.is_code_privileged(msg._client.host, msg.owner.id):
         raise CmdException("You don't have blacklist manager privileges, which are required to run this command.")
 
     git_response = GitManager.sync_remote_hard()[1]
@@ -1332,8 +1332,8 @@ def amiblacklistprivileged(msg):
     :param msg:
     :return: A string
     """
-    update_code_privileged_users_list()
-    if is_code_privileged(msg._client.host, msg.owner.id):
+    datahandling.update_code_privileged_users_list()
+    if datahandling.is_code_privileged(msg._client.host, msg.owner.id):
         return "\u2713 You are a blacklist manager privileged user."
 
     return "\u2573 No, you are not a blacklist manager privileged user."
@@ -1364,7 +1364,7 @@ def queuestatus():
 
 @command(str)
 def inqueue(url):
-    post_id, site, post_type = fetch_post_id_and_site_from_url(url)
+    post_id, site, post_type = parsing.fetch_post_id_and_site_from_url(url)
 
     if post_type != "question":
         raise CmdException("Can't check for answers.")
@@ -1694,7 +1694,7 @@ def bisect(msg, s):
         minimally_validate_content_source(msg)
 
     try:
-        s = rebuild_str(get_pattern_from_content_source(msg))
+        s = parsing.rebuild_str(get_pattern_from_content_source(msg))
     except AttributeError:
         pass
     matches = []
@@ -1754,7 +1754,7 @@ def bisect_number(msg, s):
     if msg is not None:
         minimally_validate_content_source(msg)
     try:
-        s = rebuild_str(get_pattern_from_content_source(msg))
+        s = parsing.rebuild_str(get_pattern_from_content_source(msg))
     except AttributeError:
         pass
 
@@ -1828,7 +1828,7 @@ def allnotificationsites(msg, room_id):
     :param room_id:
     :return: A string
     """
-    sites = get_all_notification_sites(msg.owner.id, msg._client.host, room_id)
+    sites = datahandling.get_all_notification_sites(msg.owner.id, msg._client.host, room_id)
 
     if len(sites) == 0:
         return "You won't get notified for any sites in that room."
@@ -1848,8 +1848,8 @@ def notify(msg, room_id, se_site, always_ping):
     """
     # TODO: Add check whether smokey reports in that room
     always_ping = always_ping if always_ping is not None else True
-    response, full_site = add_to_notification_list(msg.owner.id, msg._client.host, room_id, se_site,
-                                                   always_ping=always_ping)
+    response, full_site = datahandling.add_to_notification_list(msg.owner.id, msg._client.host, room_id, se_site,
+                                                                always_ping=always_ping)
     in_room_text = "" if always_ping else ", but only when you're in that room"
     if response == 0:
         return "You'll now get pings from me if I report a post on `{site}`, in room "\
@@ -1884,7 +1884,7 @@ def unnotify_all(msg):
     :param msg:
     :return: A string
     """
-    remove_all_from_notification_list(msg.owner.id)
+    datahandling.remove_all_from_notification_list(msg.owner.id)
     return "I will no longer ping you anywhere when I report a post."
 
 
@@ -1934,7 +1934,7 @@ def unnotify_all_admin(msg, user_id):
     """
 
     user_must_be_an_admin(msg)
-    remove_all_from_notification_list(user_id)
+    datahandling.remove_all_from_notification_list(user_id)
     return "I will no longer ping user ID {} anywhere when I report a post.".format(user_id)
 
 
@@ -1948,7 +1948,7 @@ def unnotify(msg, room_id, se_site):
     :param se_site:
     :return: A string
     """
-    response = remove_from_notification_list(msg.owner.id, msg._client.host, room_id, se_site)
+    response = datahandling.remove_from_notification_list(msg.owner.id, msg._client.host, room_id, se_site)
 
     if response:
         return "I will no longer ping you if I report a post on `{site}`, in room `{room}` "\
@@ -1967,7 +1967,7 @@ def willbenotified(msg, room_id, se_site):
     :param se_site:
     :return: A string
     """
-    if will_i_be_notified(msg.owner.id, msg._client.host, room_id, se_site):
+    if datahandling.will_i_be_notified(msg.owner.id, msg._client.host, room_id, se_site):
         return "Yes, you will be notified for that site in that room."
 
     return "No, you won't be notified for that site in that room."
@@ -2087,7 +2087,7 @@ def report(msg, args, alias_used="report"):
     if not is_privileged(msg.owner, msg.room) and alias_used != "scan":
         raise CmdException(GlobalVars.not_privileged_warning)
 
-    crn, wait = can_report_now(msg.owner.id, msg._client.host)
+    crn, wait = datahandling.can_report_now(msg.owner.id, msg._client.host)
     if not crn:
         raise CmdException("You can execute the !!/{} command again in {} seconds. "
                            "To avoid one user sending lots of reports in a few commands and "
@@ -2127,7 +2127,7 @@ def report(msg, args, alias_used="report"):
 
     if output:
         if 1 < len(urls) > output.count("\n") + 1:
-            add_or_update_multiple_reporter(msg.owner.id, msg._client.host, time.time())
+            datahandling.add_or_update_multiple_reporter(msg.owner.id, msg._client.host, time.time())
         if is_timed:
             output += "\nScanning took {} seconds.".format(round(time.time() - start_time, 3))
         return output
@@ -2143,14 +2143,14 @@ def allspam(msg, url):
     :return:
     """
 
-    crn, wait = can_report_now(msg.owner.id, msg._client.host)
+    crn, wait = datahandling.can_report_now(msg.owner.id, msg._client.host)
     if not crn:
         raise CmdException("You can execute the !!/allspam command again in {} seconds. "
                            "To avoid one user sending lots of reports in a few commands and "
                            "slowing SmokeDetector down due to rate-limiting, you have to "
                            "wait 30 seconds after you've reported multiple posts in "
                            "one go.".format(wait))
-    user = get_user_from_url(url)
+    user = parsing.get_user_from_url(url)
     if user is None:
         raise CmdException("That doesn't look like a valid user URL.")
     user_sites = []
@@ -2178,9 +2178,9 @@ def allspam(msg, url):
         # Add accounts with posts
         for site in res['items']:
             if site['question_count'] > 0 or site['answer_count'] > 0:
-                user_sites.append((site['user_id'], get_api_sitename_from_url(site['site_url'])))
+                user_sites.append((site['user_id'], parsing.get_api_sitename_from_url(site['site_url'])))
     else:
-        user_sites.append((user[0], get_api_sitename_from_url(user[1])))
+        user_sites.append((user[0], parsing.get_api_sitename_from_url(user[1])))
     # Fetch posts
     for u_id, u_site in user_sites:
         # Respect backoffs etc
@@ -2202,14 +2202,14 @@ def allspam(msg, url):
                                "moderator attention, otherwise use !!/report on the posts individually.")
         # Add blacklisted user - use most downvoted post as post URL
         message_url = "https://chat.{}/transcript/{}?m={}".format(msg._client.host, msg.room.id, msg.id)
-        add_blacklisted_user(user, message_url, sorted(posts, key=lambda x: x['score'])[0]['owner']['link'])
+        datahandling.add_blacklisted_user(user, message_url, sorted(posts, key=lambda x: x['score'])[0]['owner']['link'])
         # TODO: Postdata refactor, figure out a better way to use apigetpost
         for post in posts:
             post_data = PostData()
             post_data.post_id = post['post_id']
-            post_data.post_url = url_to_shortlink(post['link'])
-            *discard, post_data.site, post_data.post_type = fetch_post_id_and_site_from_url(
-                url_to_shortlink(post['link']))
+            post_data.post_url = parsing.url_to_shortlink(post['link'])
+            *discard, post_data.site, post_data.post_type = parsing.fetch_post_id_and_site_from_url(
+                parsing.url_to_shortlink(post['link']))
             post_data.title = unescape(post['title'])
             post_data.owner_name = unescape(post['owner']['display_name'])
             post_data.owner_url = post['owner']['link']
@@ -2230,7 +2230,7 @@ def allspam(msg, url):
                     req_url = get_se_api_url_for_route("answers/{}".format(post['post_id']))
                     params = get_se_api_default_params_questions_answers_posts_add_site(u_site)
                     answer_res = requests.get(req_url, params=params,
-                                              timeout=GlobalVars.default_requests_timeout).json()
+                                                           timeout=GlobalVars.default_requests_timeout).json()
                     if "backoff" in answer_res:
                         if GlobalVars.api_backoff_time < time.time() + answer_res["backoff"]:
                             GlobalVars.api_backoff_time = time.time() + answer_res["backoff"]
@@ -2254,7 +2254,7 @@ def allspam(msg, url):
                     why=why_info)
         time.sleep(2)  # Should this be implemented differently?
     if len(user_posts) > 2:
-        add_or_update_multiple_reporter(msg.owner.id, msg._client.host, time.time())
+        datahandling.add_or_update_multiple_reporter(msg.owner.id, msg._client.host, time.time())
 
 
 def report_posts(urls, reported_by_owner, reported_in=None, blacklist_by=None, operation="report", custom_reason=None):
@@ -2293,7 +2293,7 @@ def report_posts(urls, reported_by_owner, reported_in=None, blacklist_by=None, o
 
     normalized_urls = []
     for url in urls:
-        t = url_to_shortlink(url)
+        t = parsing.url_to_shortlink(url)
         if not t:
             normalized_urls.append("That does not look like a valid post URL.")
         elif t not in normalized_urls:
@@ -2311,7 +2311,7 @@ def report_posts(urls, reported_by_owner, reported_in=None, blacklist_by=None, o
             output.append("Post {}: {}".format(index, url))
             continue
 
-        post_data = api_get_post(rebuild_str(url))
+        post_data = api_get_post(parsing.rebuild_str(url))
 
         if post_data is None:
             output.append("Post {}: That does not look like a valid post URL.".format(index))
@@ -2330,25 +2330,25 @@ def report_posts(urls, reported_by_owner, reported_in=None, blacklist_by=None, o
             # This happens in some CI testing, because GlobalVars.edit_watcher isn't set up.
             pass
 
-        if has_already_been_posted(post_data.site, post_data.post_id, post_data.title) and not is_false_positive(
+        if datahandling.has_already_been_posted(post_data.site, post_data.post_id, post_data.title) and not datahandling.is_false_positive(
                 (post_data.post_id, post_data.site)) and not is_forced:
             # Don't re-report if the post wasn't marked as a false positive. If it was marked as a false positive,
             # this re-report might be attempting to correct that/fix a mistake/etc.
 
             if GlobalVars.metasmoke_key is not None:
-                se_link = to_protocol_relative(post_data.post_url)
-                ms_link = resolve_ms_link(se_link) or to_metasmoke_link(se_link)
+                se_link = parsing.to_protocol_relative(post_data.post_url)
+                ms_link = datahandling.resolve_ms_link(se_link) or parsing.to_metasmoke_link(se_link)
                 output.append("Post {}: Already recently reported [ [MS]({}) ]".format(index, ms_link))
                 continue
             else:
                 output.append("Post {}: Already recently reported".format(index))
                 continue
 
-        url = to_protocol_relative(post_data.post_url)
+        url = parsing.to_protocol_relative(post_data.post_url)
         post = Post(api_response=post_data.as_dict)
-        user = get_user_from_url(post_data.owner_url)
+        user = parsing.get_user_from_url(post_data.owner_url)
 
-        if fetch_post_id_and_site_from_url(url)[2] == "answer":
+        if parsing.fetch_post_id_and_site_from_url(url)[2] == "answer":
             parent_data = api_get_post("https://{}/q/{}".format(post.post_site, post_data.question_id))
             post._is_answer = True
             post._parent = Post(api_response=parent_data.as_dict)
@@ -2411,7 +2411,7 @@ def report_posts(urls, reported_by_owner, reported_in=None, blacklist_by=None, o
                 output.append("Post {}: This does not look like spam".format(index))
 
     for item in users_to_blacklist:
-        add_blacklisted_user(*item)
+        datahandling.add_blacklisted_user(*item)
 
     if len(output):
         return "\n".join(output)
@@ -2420,7 +2420,7 @@ def report_posts(urls, reported_by_owner, reported_in=None, blacklist_by=None, o
 
 @command(str, str, privileged=True, whole_msg=True)
 def feedback(msg, post_url, feedback):
-    post_url = url_to_shortlink(post_url)[6:]
+    post_url = parsing.url_to_shortlink(post_url)[6:]
     if not post_url:
         raise CmdException("No such feedback.")
 
@@ -2435,7 +2435,7 @@ def feedback(msg, post_url, feedback):
 @command(privileged=True)
 def dump_data():
     try:
-        s, metadata = SmokeyTransfer.dump()
+        s, metadata = datahandling.SmokeyTransfer.dump()
         s = "{}, {}, {}\n{}".format(metadata['time'], metadata['location'], metadata['rev'], s)
         tell_rooms_with('dump', s)
     except Exception:
@@ -2451,7 +2451,7 @@ def load_data(msg_id, hostname, alias_used="load-data"):
     if not force and not is_self(msg.owner.id, host=hostname):
         raise CmdException("Message owner is not myself. Refusing to load.")
     try:
-        SmokeyTransfer.load(msg.content_source)
+        datahandling.SmokeyTransfer.load(msg.content_source)
     except ValueError as e:
         raise CmdException(str(e)) from None
     except Exception:
@@ -2511,7 +2511,7 @@ def postgone(msg):
     :param msg:
     :return: None
     """
-    edited = edited_message_after_postgone_command(msg.content)
+    edited = parsing.edited_message_after_postgone_command(msg.content)
 
     if edited is None:
         raise CmdException("That's not a report.")
@@ -2538,10 +2538,10 @@ def false(feedback, msg, comment, alias_used="false"):
     feedback_type = FALSE_FEEDBACKS[alias_used]
     feedback_type.send(post_url, feedback)
 
-    post_id, site, post_type = fetch_post_id_and_site_from_url(post_url)
-    add_false_positive((post_id, site))
+    post_id, site, post_type = parsing.fetch_post_id_and_site_from_url(post_url)
+    datahandling.add_false_positive((post_id, site))
 
-    user = get_user_from_url(owner_url)
+    user = parsing.get_user_from_url(owner_url)
 
     result = "Registered " + post_type + " as false positive"
     if user is None:
@@ -2550,10 +2550,10 @@ def false(feedback, msg, comment, alias_used="false"):
             raise CmdException(result + ', but could not get user from URL: `{0!r}`'.format(owner_url))
     else:
         if feedback_type.blacklist:
-            add_whitelisted_user(user)
+            datahandling.add_whitelisted_user(user)
             result += " and whitelisted user"
-        elif is_blacklisted_user(user):
-            remove_blacklisted_user(user)
+        elif datahandling.is_blacklisted_user(user):
+            datahandling.remove_blacklisted_user(user)
             result += " and removed user from the blacklist"
     result += "."
 
@@ -2586,8 +2586,8 @@ def ignore(feedback, msg, comment, alias_used="ignore"):
 
     Feedback.send_custom("ignore", post_url, feedback)
 
-    post_id, site, _ = fetch_post_id_and_site_from_url(post_url)
-    add_ignored_post((post_id, site))
+    post_id, site, _ = parsing.fetch_post_id_and_site_from_url(post_url)
+    datahandling.add_ignored_post((post_id, site))
 
     if comment:
         Tasks.do(Metasmoke.post_auto_comment, comment, feedback.owner, url=post_url)
@@ -2612,7 +2612,7 @@ def naa(feedback, msg, comment, alias_used="naa"):
         raise CmdException("That message is not a report.")
 
     post_url, _ = post_data
-    post_id, site, post_type = fetch_post_id_and_site_from_url(post_url)
+    post_id, site, post_type = parsing.fetch_post_id_and_site_from_url(post_url)
 
     if post_type != "answer":
         raise CmdException("That report was a question; questions cannot be marked as NAAs.")
@@ -2620,8 +2620,8 @@ def naa(feedback, msg, comment, alias_used="naa"):
     feedback_type = NAA_FEEDBACKS[alias_used]
     feedback_type.send(post_url, feedback)
 
-    post_id, site, _ = fetch_post_id_and_site_from_url(post_url)
-    add_ignored_post((post_id, site))
+    post_id, site, _ = parsing.fetch_post_id_and_site_from_url(post_url)
+    datahandling.add_ignored_post((post_id, site))
 
     if comment:
         Tasks.do(Metasmoke.post_auto_comment, comment, feedback.owner, url=post_url)
@@ -2648,11 +2648,11 @@ def true(feedback, msg, comment, alias_used="true"):
     feedback_type = TRUE_FEEDBACKS[alias_used]
     feedback_type.send(post_url, feedback)
 
-    post_id, site, post_type = fetch_post_id_and_site_from_url(post_url)
+    post_id, site, post_type = parsing.fetch_post_id_and_site_from_url(post_url)
     result = "Registered " + post_type + " as true positive"
     cant_get_user_command_exception_text = result + ', but could not get user from URL: `{0!r}`'.format(owner_url)
     try:
-        user = get_user_from_url(owner_url)
+        user = parsing.get_user_from_url(owner_url)
     except TypeError as e:
         raise CmdException(cant_get_user_command_exception_text)
 
@@ -2662,7 +2662,7 @@ def true(feedback, msg, comment, alias_used="true"):
     else:
         if feedback_type.blacklist:
             message_url = "https://chat.{}/transcript/{}?m={}".format(msg._client.host, msg.room.id, msg.id)
-            add_blacklisted_user(user, message_url, post_url)
+            datahandling.add_blacklisted_user(user, message_url, post_url)
 
             result += " and blacklisted user"
         else:
@@ -2689,8 +2689,8 @@ def why(msg):
     if not post_data:
         raise CmdException("That's not a report.")
     else:
-        *post, _ = fetch_post_id_and_site_from_url(post_data[0])
-        why_info = get_why(post[1], post[0])
+        *post, _ = parsing.fetch_post_id_and_site_from_url(post_data[0])
+        why_info = datahandling.get_why(post[1], post[0])
         if why_info:
             return why_info
         else:
@@ -2707,7 +2707,7 @@ def autoflagged(msg):
     :return: A string
     """
     # sneaky!
-    update_reason_weights()
+    datahandling.update_reason_weights()
 
     post_data = get_report_data(msg)
 
