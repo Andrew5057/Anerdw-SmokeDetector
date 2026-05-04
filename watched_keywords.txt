@@ -81103,3 +81103,4 @@
 1777903014	Jeff Schaller	gettelelatino\.com
 1777903116	Jeff Schaller	theaaina\.digital
 1777904641	Jeff Schaller	trustsig\.eu
+1777915641	Jeff Schaller	nxdeep\.com
