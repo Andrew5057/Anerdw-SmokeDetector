@@ -81090,3 +81090,4 @@
 1777751771	Jeff Schaller	guiamu\.com\.ar
 1777799983	Jeff Schaller	tellyupdatesnews\.com
 1777819777	Dan Getz	impviser\.com
+1777857753	Dan Getz	iqra-institute\.com
