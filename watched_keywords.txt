@@ -40357,7 +40357,6 @@
 1657879365	Makyen	(?-i:ELnR9fW)(?#cutt.ly)
 1657879392	Makyen	fridayshopping\.vn
 1657879429	Makyen	fridayshopping(?!\.vn)
-1657879455	Makyen	emblixacademy\.com
 1657880381	Jeff Schaller	ochk\.hk
 1657880672	Jeff Schaller	Hinyeung
 1657880695	Jeff Schaller	healthherbsclinic
@@ -60911,7 +60910,6 @@
 1714829441	Makyen	btbus
 1714829462	Makyen	kairatechnologies\.in
 1714829493	Makyen	kaira[\W_]*+technologies(?!\.in(?<=kairatechnologies\.in))
-1714829514	Makyen	digitalaka
 1714829568	Makyen	store[\W_]*+shuddhi(?!\.com)
 1714829590	Makyen	led[\W_]*+truck[\W_]*+advertising
 1714829612	Makyen	red[\W_]*+satin[\W_]*+varsity[\W_]*+jacket
@@ -68934,7 +68932,6 @@
 1734078224	cocomac	swremovals\.com\.au
 1734079823	Cow	flushfactorplus-us\.netlify\.app
 1734083158	Cow	binhminhrental\.vn
-1734086137	Cow	casefox\.com
 1734086148	Cow	finxl\.in
 1734088748	Cow	refpa7921972\.top
 1734088942	Cow	magentowebdev\.com
@@ -78703,7 +78700,6 @@
 1764912168	VLAZ	mayvesinhcongnghiep\.net
 1764917180	VLAZ	fafaconcepts\.com
 1764917772	VLAZ	propertyonion\.com
-1764917801	VLAZ	jarvis[\W_]*+reach
 1764925319	VLAZ	damdaroil\.com
 1764926490	VLAZ	benhvienthammygangwhoo\.vn
 1764928831	VLAZ	dollb2027(?:@gmail\.com)
@@ -80641,3 +80637,471 @@
 1775142529	VLAZ	closingcurtain\.ae
 1775146368	VLAZ	obrayy(?# youtube channel)
 1775160731	Vickel	searchenginescope\.com
+1775194649	VLAZ	prospectb2b\.com
+1775203199	VLAZ	starindiatours\.com
+1775215883	VLAZ	hireseoexpert\.co\.in
+1775215890	VLAZ	alldoneasiatic\.com
+1775240409	Jeff Schaller	cxfilexplorer\.online
+1775240440	Jeff Schaller	kinderready\.com
+1775244330	VLAZ	tourismempire39\.blogspot
+1775252736	VLAZ	khita\.com\.pk
+1775253693	VLAZ	markeltree\.com
+1775284692	VLAZ	bleckscreen\.com
+1775284735	VLAZ	6stream\.net
+1775307237	VLAZ	jairos-adventure\.com
+1775322832	Jeff Schaller	timetocalc\.com
+1775324055	Dan Getz	mihajlostanojevic\.com
+1775325925	Dan Getz	zkprintsolutions\.com
+1775325976	Dan Getz	gamepass\.tv
+1775333585	Dan Getz	(?-i:Qg7cAxRU7PA)(?#youtube)
+1775367441	VLAZ	eazair
+1775368187	VLAZ	openportcheckers\.com
+1775386987	VLAZ	iivs\.com
+1775399223	Dan Getz	rutificadorr\.cl
+1775399232	Dan Getz	drivio\.us
+1775399767	Dan Getz	mattmediagroup\.com
+1775402541	Jeff Schaller	thetechnicalstuff\.com
+1775408464	Dan Getz	stylishnamet\.com
+1775410169	Dan Getz	ishoppist\.com
+1775410298	Dan Getz	inceptiallogic\.com
+1775412335	Dan Getz	digitalmagicwand\.com
+1775418493	Jeff Schaller	analyticsdrive\.tech
+1775422820	Dan Getz	geeklando\.com\.br
+1775422829	Dan Getz	nerdsrant\.com
+1775422944	Dan Getz	animeac\.com\.br
+1775427876	Vickel	waktogel\.livejournal\.com
+1775449233	Dan Getz	bouwbedrijfroussou\.nl
+1775449730	VLAZ	nimblymath\.com
+1775458861	VLAZ	go4database\.com
+1775459343	VLAZ	thejacketspot\.com
+1775461705	VLAZ	examlover\.com
+1775462808	VLAZ	planetradiators\.co\.uk
+1775470363	VLAZ	arihantjain\.cv
+1775470783	VLAZ	floodtechusa\.com
+1775470790	VLAZ	floodtechusava\.wikidot\.com
+1775475621	VLAZ	aanandakosha\.com
+1775479494	VLAZ	cheapsmmpanel\.co
+1775482811	Jeff Schaller	glaadvoice\.com
+1775483014	Jeff Schaller	sz7820(?#telegram)
+1775483065	Jeff Schaller	kin6767\.com
+1775484858	Jeff Schaller	sipraw\.com
+1775508250	Jeff Schaller	Tanya[\W_]*+Debo
+1775539742	VLAZ	emcqs\.org
+1775543405	VLAZ	(?-i:^The Marketing Desk$)
+1775544610	VLAZ	sknlex\.com
+1775546165	VLAZ	highfallsmotel\.com
+1775546184	VLAZ	bestqualitybathrooms\.co\.uk
+1775547348	VLAZ	thelivelead\.com
+1775548036	VLAZ	cleanairnepal\.com
+1775556322	VLAZ	wpsupportwebdevelopment\.com
+1775560543	Jeff Schaller	bathroomshopuk\.co\.uk
+1775560881	cigien	i-maths\.ca
+1775561028	cigien	softwarexp\.com
+1775563361	Jeff Schaller	brickzonehub\.co\.uk
+1775567267	Jeff Schaller	ankspire\.com
+1775569026	Jeff Schaller	anchorsingerradhika\.com
+1775571973	Jeff Schaller	nomadsclothing\.com
+1775577126	Dan Getz	snatchsavings\.com
+1775647792	Dan Getz	baqidigital\.com
+1775647835	Dan Getz	pryorbathrooms\.co\.uk
+1775630464	Anerdw	shipfinex\.com
+1775648244	Dan Getz	digitalsoftwarekey\.com
+1775652065	Dan Getz	jansmith\.com
+1775656680	Dan Getz	webtechnality\.com
+1775656853	Dan Getz	thoughtlab\.cloud
+1775656859	Dan Getz	thoughtlab\.work
+1775656942	Dan Getz	junkbegun\.com
+1775657016	Dan Getz	htpbe\.tech
+1775669197	Jeff Schaller	betteroutdoorlivingathome\.com
+1775669421	Dan Getz	kokitoto
+1775674170	Dan Getz	aminarasheedk\.com
+1775679324	Jeff Schaller	bgame\.com\.pk
+1775683314	Dan Getz	tracklist\.live
+1775702652	Dan Getz	nexdigm\.com
+1775722013	VLAZ	missionvalleycapital\.com
+1775722096	VLAZ	faceshapedetector\.app
+1775722194	VLAZ	brooklynbestelectrician\.com
+1775722224	VLAZ	calculadoraaliciaonline\.com
+1775722261	VLAZ	kavachqr\.live
+1775731886	Jeff Schaller	elaax\.de
+1775731974	Jeff Schaller	vert-age\.com
+1775732120	Jeff Schaller	rupa\.digiway\.co\.in
+1775735210	Jeff Schaller	mssn\.online
+1775737221	Dan Getz	ksarestaurantsz\.com
+1775744824	VLAZ	satespace\.com
+1775747281	Jeff Schaller	ajonesfamilylaw\.com
+1775756283	Jeff Schaller	trustsmss\.com
+1775761547	Jeff Schaller	knownalytics\.com
+1775804325	VLAZ	operonstrategist\.com
+1775815663	VLAZ	newbuyermortgage\.com
+1775819185	Jeff Schaller	yan3d\.org
+1775819270	Jeff Schaller	doubleslitexperiment\.app
+1775820802	Jeff Schaller	PassCertHub(?!\.com)
+1775823236	Jeff Schaller	metablocktech\.com
+1775823487	Dan Getz	pdf365\.cloud
+1775827131	VLAZ	pynfinity\.com
+1775829687	Jeff Schaller	finreads\.com
+1775834144	VLAZ	Xhrlffj(?:s|es)?
+1775834204	VLAZ	(?-i:^Selfiiie 5934$)
+1775835005	VLAZ	oliverjrdelapenaofficialph(?# YouTube channel)
+1775846151	Jeff Schaller	thealloymarket\.com
+1775848836	Jeff Schaller	sportkeren01\.blogspot
+1775861303	Jeff Schaller	nullbrawls\.org
+1775863405	Jeff Schaller	macfullversion\.com
+1775871489	Jeff Schaller	hubbolt20(?:@gmail\.com)?
+1775878663	Dan Getz	hubbboltsecurity\.com
+1775896582	VLAZ	damankhelo\.com
+1775896596	VLAZ	sungrouphcm\.com\.vn
+1775899881	VLAZ	rvmglobal\.in
+1775900335	VLAZ	rototillerguy\.com
+1775900345	VLAZ	rototillerguy(?!\.com)
+1775921091	Jeff Schaller	serubetok\.com
+1775922775	Dan Getz	astutebetaserverhq\.com
+1775925526	Dan Getz	serp\.ly
+1775925750	Dan Getz	github\.com/serpapps
+1775925781	Dan Getz	github\.com/devinschumacher
+1775937037	Dan Getz	escaperoadcity2\.com
+1775938284	Dan Getz	ragdollhit-game\.io
+1775996076	Dan Getz	shsat-scorecalculator\.com
+1775996215	Dan Getz	smsgatewayhub(?!\.com)
+1775998244	Jeff Schaller	logbase2calculator\.com
+1776002526	Dan Getz	bonus-ah\.nl
+1776016057	Dan Getz	sites\.google\.com/view/solargamerz
+1776017982	Jeff Schaller	fire-kirin\.us
+1776057837	VLAZ	tony\.expert
+1776058112	VLAZ	geopreview/id6758587360(?# application for Mac)
+1776058218	VLAZ	gtamobiles\.com
+1776060290	VLAZ	shanijafarsana\.in
+1776075625	Jeff Schaller	esaw\.london
+1776075710	Jeff Schaller	makaninterio\.com
+1776076047	Jeff Schaller	seoindiaonline\.com
+1776076158	Jeff Schaller	stringtoolsapp\.com
+1776076171	Jeff Schaller	ovaro\.io
+1776076188	Jeff Schaller	invoiceovaro\.com
+1776076212	Jeff Schaller	toptelmultimedia\.in
+1776082179	Jeff Schaller	ggbiogoals\.com
+1776087773	Jeff Schaller	translinguist\.com
+1776087878	Jeff Schaller	aromora\.co\.uk
+1776089391	Jeff Schaller	nidheeshs\.com
+1776091805	VLAZ	samzal\.com
+1776092695	Jeff Schaller	avrupabet\.io
+1776093122	VLAZ	blockreq
+1776093850	Jeff Schaller	arcignite\.com
+1776094341	VLAZ	(?-i:^André Guzzon$)
+1776094723	VLAZ	nekopoidl\.com
+1776094917	VLAZ	Mobolutions
+1776099800	VLAZ	(?-i:^Sincere Science Team$)
+1776100692	Jeff Schaller	entrepreneuronemedia\.com
+1776101197	Jeff Schaller	backusestimating\.com
+1776105464	Jeff Schaller	studio98\.ai
+1776114831	Anerdw	evgfinescheck\.com
+1776128491	Jeff Schaller	services-nguyenkim\.com
+1776148839	VLAZ	phoenysoft\.com
+1776152764	VLAZ	tradewithharryofficial(?# youtube channel)
+1776162404	Jeff Schaller	kraftocart\.com
+1776162431	Jeff Schaller	essaysports\.com
+1776162460	Jeff Schaller	514digitalco\.com
+1776162503	Jeff Schaller	maxinfocom\.us
+1776162682	Jeff Schaller	econetix\.net
+1776165681	Dan Getz	nirvanhospital\.com
+1776165803	Jeff Schaller	Nirvan[\W_]*+Hospital
+1776166833	Jeff Schaller	us\.enrollbusiness\.com
+1776166846	Jeff Schaller	callupcontact\.com
+1776166859	Jeff Schaller	a-zbusinessfinder\.com
+1776166869	Jeff Schaller	trueen\.com
+1776166879	Jeff Schaller	perrysplacepromotions\.org
+1776166890	Jeff Schaller	nepalphonebook\.com
+1776166898	Jeff Schaller	findabusinesspro\.com
+1776166908	Jeff Schaller	freelistingusa\.com
+1776168512	Jeff Schaller	schmerzenmeds\.com
+1776170092	Jeff Schaller	walletdeploy\.com
+1776172024	Jeff Schaller	thebhajan\.com
+1776173890	Jeff Schaller	ink-egypt\.com
+1776175063	Dan Getz	victoriadanceseries\.com
+1776178644	VLAZ	self-hosted-signal\.com
+1776186556	Jeff Schaller	resilientmastery\.com
+1776190491	Jeff Schaller	paybito\.com
+1776192348	Jeff Schaller	firmographic\.co
+1776192997	General Grievance	moonlitemoney\.com
+1776194078	Jeff Schaller	gradixpro\.com
+1776221686	Dan Getz	plexo\.work
+1776222465	Dan Getz	talordata\.com
+1776235012	Dan Getz	faisalmian\.com
+1776235084	Dan Getz	ruangjual\.com
+1776238666	VLAZ	findallterminal\.com
+1776240025	VLAZ	decmob\.com
+1776248565	Jeff Schaller	rejuvenatepeptides\.com
+1776251461	Jeff Schaller	wooquery\.com
+1776259362	Dan Getz	yeshwants(?#github)
+1776260421	Jeff Schaller	sayantanpahari\.online
+1776275625	Jeff Schaller	milkywaygaming\.vip
+1776277461	Jeff Schaller	smallfinance\.us
+1776285463	VLAZ	minineo\.com
+1776293164	Dan Getz	easygarage\.fr
+1776294032	Dan Getz	duniagaming88\.blogspot
+1776321599	VLAZ	hyy899(?# telegram)
+1776321607	VLAZ	hhyy899(?# telegram)
+1776324600	VLAZ	lookbookair\.com
+1776324818	VLAZ	devicexa\.com
+1776326645	VLAZ	diebestengutscheine\.de
+1776331810	VLAZ	trademarx\.in
+1776331986	VLAZ	Peptide[\W_]*+Hub
+1776335793	Jeff Schaller	alphabetplatesuk\.com
+1776335854	Jeff Schaller	arc3d\.ae
+1776337340	Jeff Schaller	ghughuti\.co\.in
+1776338791	Jeff Schaller	adarshbearings\.com
+1776339456	Jeff Schaller	actowizsolutions\.com
+1776340478	Dan Getz	agro-ray\.com
+1776343841	Jeff Schaller	procafeconsulting\.com
+1776343978	Jeff Schaller	MH[\W_]*+Cognition
+1776352804	Dan Getz	receiptsfaker\.com
+1776361639	VLAZ	(?-i:Publik404God)(?# t.me)
+1776367113	Jeff Schaller	slidesextract\.com
+1776371637	VLAZ	full-screen\.app
+1776380384	Vickel	eringen\.com
+1776400178	Dan Getz	loanitol\.com
+1776406603	VLAZ	educamapas\.com\.br
+1776421774	Jeff Schaller	alwatanyahuae\.com
+1776421807	Jeff Schaller	photonconsole\.com
+1776421855	Jeff Schaller	derhems\.blogspot
+1776428476	Jeff Schaller	equranzone\.com
+1776429451	Dan Getz	drivedefensivelytexas\.com
+1776438196	Dan Getz	mcpnest\.io
+1776446522	VLAZ	mailcheap\.io
+1776449850	Jeff Schaller	punjabprojects\.com\.pk
+1776451311	Dan Getz	acrosspay
+1776460374	Jeff Schaller	kiranbedi\.com
+1776471544	Dan Getz	repriced\.ai
+1776477513	Jeff Schaller	genericoncology\.com
+1776517778	SamGibson	fixmyspeakercleaner\.net
+1776523886	Dan Getz	thepaint3d\.com
+1776526553	VLAZ	hathanhmotor\.com
+1776527590	VLAZ	hifamiapp\.com
+1776527698	VLAZ	clura\.ai
+1776527911	VLAZ	nothing[\W_]*+browsers[\W_]*+piggy
+1776527919	VLAZ	nothing-browser-docs\.pages\.dev
+1776535333	VLAZ	slidesgrabber\.com
+1776558305	Jeff Schaller	emcindustrial\.com
+1776564925	Anerdw	SYSBEL
+1776573123	Anerdw	arealty\.net
+1776594628	Jeff Schaller	ziotech\.ae
+1776594655	Jeff Schaller	roamvisa\.com
+1776595702	Jeff Schaller	seorender\.io
+1776606309	SamGibson	genrtl\.com
+1776612150	Dan Getz	perione\.in
+1776614934	VLAZ	arcdefenders\.com
+1776663489	VLAZ	mukhyamantrirajshri\.com
+1776665266	VLAZ	marketplace-seconldlife-let-p-be1335f33c3f\.herokuapp\.com
+1776666212	VLAZ	intodns\.ai
+1776672506	VLAZ	majhiladakibahin\.com
+1776672530	VLAZ	matrimonialsindia\.com
+1776674845	VLAZ	estimately\.io
+1776675611	VLAZ	smsfoxbox\.it
+1776681882	VLAZ	saudirailway\.net
+1776681911	VLAZ	greensparksoftware\.com
+1776688393	VLAZ	nabuenergy\.com
+1776689378	VLAZ	phonelockboxes\.com
+1776692651	Jeff Schaller	treeservicedenverllc\.com
+1776699096	Jeff Schaller	Zyminex
+1776713517	VLAZ	serracatch\.myshopify\.com
+1776729183	Jeff Schaller	rhinestonemart\.com
+1776729938	VLAZ	foractx777\.pro
+1776748498	VLAZ	powerliftgroup\.ae
+1776751408	VLAZ	systemds\.io
+1776751682	VLAZ	vert-age[\W_]*+dialer
+1776752185	VLAZ	thedreamridersgroup\.com
+1776752207	VLAZ	dream[\W_]*+riders[\W_]*+mototouring
+1776752635	VLAZ	silverstreakhospital\.com
+1776760651	VLAZ	neurologyconf\.com
+1776761811	VLAZ	balatrocalc\.com
+1776768141	Jeff Schaller	iPhone[\W_]*+Refixer
+1776782575	Jeff Schaller	stipendiocalcolatore\.it
+1776784469	VLAZ	snatchsavings(?!\.com)
+1776802165	Jeff Schaller	buycocaineonline5(?:@gmail\.com)?
+1776826058	Dan Getz	raysun101
+1776840041	VLAZ	gaintools(?!\.com)
+1776845171	VLAZ	mlagroupofcompanies\.com
+1776851270	VLAZ	goldrate\.qa
+1776851944	Ryan M	macauggid\.com
+1776851981	Ryan M	ikhya\.com
+1776852984	VLAZ	comxus\.com
+1776854998	Dan Getz	alliancerecruitmentagency\.com
+1776855184	Dan Getz	tarpsuk\.co\.uk
+1776857452	VLAZ	ingeniousguru\.com
+1776862662	Dan Getz	theyetilife\.com
+1776862679	Dan Getz	internship\.company
+1776867781	Dan Getz	github\.com/lackystar043-svg
+1776877640	Dan Getz	voicetonotes\.ai
+1776877679	Dan Getz	ai\.voicetonotes\.(?#play.google.com)
+1776886374	VLAZ	caasiinoo\.com
+1776910512	Dan Getz	pixelcarracer\.pro
+1776910525	Dan Getz	gptimg2ai\.net
+1776922254	VLAZ	adsrole\.com
+1776922419	Cow	deptheon(?!\.com(?<=deptheon\.com))
+1776922432	Cow	deptheon\.com
+1776924662	VLAZ	scicalcpro\.com
+1776929456	VLAZ	tuesdaytickets\.com
+1776941154	Dan Getz	allpanelexchapp\.com\.in
+1776942351	Jeff Schaller	oigetit\.com
+1776943326	Jeff Schaller	shreemahalaxmisteel\.com
+1776943351	Jeff Schaller	samshika\.com
+1776943392	Jeff Schaller	zedmsmeservices\.com
+1776943636	Dan Getz	charactarai\.co\.uk
+1776943931	Dan Getz	allinonetools\.net
+1776944626	Dan Getz	shree[\W_]*+mahalaxmi[\W_]*+steel(?!\.com(?<=shreemahalaxmisteel\.com))
+1776944737	Dan Getz	blr[\W_]*+data[\W_]*+recovery
+1776956548	Dan Getz	amyntasmedia\.com
+1776956995	Dan Getz	geodit\.in
+1776959101	Dan Getz	bryghtenup\.com
+1776966264	Dan Getz	stundenlohnrechnerr\.de
+1776966279	Dan Getz	houseinteriorblog\.com
+1776971521	Jeff Schaller	sharexzone\.com
+1776988649	Dan Getz	idea2dev\.com
+1777027492	Jeff Schaller	workmanservices\.com\.pk
+1777027531	Jeff Schaller	dostwinlogo\.in\.net
+1777027611	Jeff Schaller	nexcenz\.com
+1777030671	Dan Getz	medium\.com/@mdnpropertiesseo
+1777054547	Dan Getz	SkyExchOnline
+1777096314	Anerdw	homeofficetranslations\.co\.uk
+1777100001	VLAZ	hindukushholidays\.com
+1777100258	VLAZ	unpackzst\.com
+1777100225	Anerdw	ukcertifiedtranslators\.co\.uk
+1777105851	VLAZ	cricketira\.com
+1777105871	VLAZ	brightgate\.ae
+1777110111	VLAZ	footballscore\.news
+1777121741	Dan Getz	nexbillio\.com
+1777139075	Jeff Schaller	baixarvideopin\.com\.br
+1777143113	Jeff Schaller	spotgoldvalue\.com
+1777198219	Nisse Engström	snowdayca\.com
+1777198452	Nisse Engström	trimrx\.com
+1777199647	Jeff Schaller	addendanalytics\.com
+1777202424	VLAZ	nid[\W_]*+card[\W_]*+check
+1777202468	VLAZ	princedaniel0997
+1777210475	Jeff Schaller	pracal\.io
+1777216823	VLAZ	kridhafashion\.com
+1777235700	Dan Getz	pathcoursehealth\.com
+1777235740	Dan Getz	deltaexecotr\.com
+1777239206	Jeff Schaller	powerclick\.kilicov\.dev
+1777263346	Anerdw	Innovel
+1777270977	VLAZ	nxregress
+1777270841	Anerdw	nxanalytics\.pro
+1777272213	VLAZ	notubemp3d\.com
+1777278485	VLAZ	hellobooks\.ai
+1777278523	VLAZ	teamlamp\.com
+1777280626	VLAZ	doorwin
+1777280690	VLAZ	jacketscreator\.com
+1777284627	VLAZ	vamox\.co\.in
+1777287471	VLAZ	subhadipsingha05@gmail\.com
+1777288831	VLAZ	hindsteel\.com
+1777291399	VLAZ	jarvisreach\.io
+1777291406	VLAZ	jarvis[\W_]*+reach(?!\.io(?<=jarvisreach\.io))
+1777299011	VLAZ	devsheild\.live
+1777299267	VLAZ	shop\.maaltalk\.com
+1777303483	Jeff Schaller	geeetupper38(?:@proton\.me)?
+1777308602	Jeff Schaller	technicalworld\.co
+1777356501	VLAZ	arlingtonresidential\.com
+1777359395	VLAZ	99eedu[\W_]*+institute
+1777365624	VLAZ	jimsd\.org
+1777371524	Jeff Schaller	emecron\.com
+1777375866	VLAZ	mctiyu\.cc
+1777377535	Dan Getz	mattersuite\.com
+1777381332	VLAZ	p2prate\.live
+1777389330	VLAZ	karanmahawar\.wordpress\.com
+1777393751	Dan Getz	101localservices\.com
+1777397301	Jeff Schaller	packings\.co
+1777403646	Jeff Schaller	hdmn\.site
+1777408527	VLAZ	neoved\.io
+1777435096	Dan Getz	blockifybuilder\.com
+1777440494	VLAZ	mixtacademy\.com
+1777441688	VLAZ	locksmithwhittierpro\.com
+1777451740	VLAZ	k[\W_]*+k[\W_]*+studio(?!\.co\.uk(?<=kkstudio\.co\.uk))
+1777451748	VLAZ	kkstudio\.co\.uk
+1777451798	VLAZ	fast-transcriber\.com
+1777451857	VLAZ	ni\.com
+1777454107	Jeff Schaller	brandstailer\.com
+1777458572	Jeff Schaller	navnirmanfoundation\.com
+1777458671	Jeff Schaller	rankar\.ai
+1777461099	VLAZ	hawaii[\W_]*+steel[\W_]*+doors
+1777461106	VLAZ	hawaii[\W_]*+doors[\W_]*+windows
+1777462098	Dan Getz	wellcalculate\.com
+1777462851	VLAZ	infinix\.in
+1777468149	Jeff Schaller	txdiepflap\.com
+1777474680	Dan Getz	quransurahs\.org
+1777481851	Dan Getz	prourlmonitor\.com
+1777481864	Dan Getz	prourlmonitor(?!\.com)
+1777483633	VLAZ	id49948591(?# my-links.website)
+1777483642	VLAZ	id5262289250(?# profile-hub.uno)
+1777484192	VLAZ	profile-hub\.uno(?# drop this watch if it gets FPs)
+1777484201	VLAZ	instahub\.fun(?# drop this watch if it gets FPs)
+1777484208	VLAZ	my-links\.website(?# drop this watch if it gets FPs)
+1777488529	Dan Getz	ssvtiktok\.com
+1777543323	Jeff Schaller	globalmapper\.id
+1777543427	Jeff Schaller	elitemgmtservices\.net
+1777543662	Jeff Schaller	ricepuritytest\.co\.uk
+1777543714	Jeff Schaller	cookoutmenu\.net
+1777543862	Jeff Schaller	ghoststowingandrecovery\.com
+1777545988	VLAZ	rudrakshabhandar\.com
+1777546000	VLAZ	slipsafeliner\.com
+1777546011	VLAZ	raystechserv\.com
+1777546178	VLAZ	(?-i:JO9T9Z)(?# links.speed.app)
+1777548897	Jeff Schaller	ukoddsapi\.com
+1777549697	VLAZ	ditosimregister\.com
+1777550816	VLAZ	mommabearusa\.com
+1777551994	VLAZ	nubia[\W_]*+smartphones
+1777552997	Jeff Schaller	infinix360\.com
+1777555239	VLAZ	fenomeno888(?# telegram)
+1777555248	VLAZ	polymtradebot\.com
+1777565422	Dan Getz	gentleresiliencestudio\.com
+1777574684	Jeff Schaller	2dm-webviewer\.de
+1777575721	Dan Getz	clashofclansmodi\.com
+1777597092	Dan Getz	usasalarytools\.com
+1777602144	Dan Getz	c3c\.build
+1777617089	VLAZ	advanceduser\.net
+1777617167	VLAZ	reportcrime_h[\W_]*+proton[\W_]*+me
+1777618941	VLAZ	viewtvy\.com
+1777618948	VLAZ	tereatv\.com
+1777618955	VLAZ	freegotv\.com
+1777618962	VLAZ	bestiptvguide\.com
+1777631511	Dan Getz	pureenergy\.co\.in
+1777632593	Dan Getz	menuwikipedia\.com
+1777632776	Dan Getz	91clubb\.pro\.in
+1777632827	Dan Getz	jalwahapp\.com
+1777634571	Dan Getz	afterallalong\.com
+1777636308	Dan Getz	1leaptechnologies\.com
+1777640482	Dan Getz	rsz-reused-r-finder\.blogspot
+1777643540	Jeff Schaller	tcsexpress\.com\.pk
+1777645741	Jeff Schaller	aurafirstscience\.com
+1777646550	Jeff Schaller	aanwebsolutions\.com
+1777646588	Jeff Schaller	AAN[\W_]*+Web[\W_]*+Solutions
+1777651706	Jeff Schaller	electronicdesignblogjohn\.blogspot
+1777679740	Jeff Schaller	abyasam\.com
+1777684532	Jeff Schaller	bedrockbotanicals\.com
+1777716336	Dan Getz	srhwebagency\.com
+1777716527	Dan Getz	drclimentscott(?:@gmail\.com)?
+1777716547	Dan Getz	basantclubgames\.pk
+1777716579	Dan Getz	calculatorwebtools\.com
+1777716604	Dan Getz	downtoearthorganics\.com\.au
+1777718864	Dan Getz	gameletterboxed\.com
+1777718879	Dan Getz	unirr\.in
+1777720299	Dan Getz	freemaxfire\.com
+1777720600	Dan Getz	aura-trade\.pro
+1777723793	Jeff Schaller	iptvsmartplayer\.org
+1777738225	Jeff Schaller	packnshift\.com
+1777751771	Jeff Schaller	guiamu\.com\.ar
+1777799983	Jeff Schaller	tellyupdatesnews\.com
+1777819777	Dan Getz	impviser\.com
+1777857753	Dan Getz	iqra-institute\.com
+1777889464	Cow	speicher\.co\.in
+1777889534	Cow	maxlife\.top
+1777890479	Jeff Schaller	cvireland\.com
+1777877561	Anerdw	fintram\.com
+1777874071	Anerdw	almuqeet\.net
+1777874050	Anerdw	tl01353\.com
+1777874028	Anerdw	98yl798\.vip
+1777894490	Jeff Schaller	tomikiaikido\.ie
+1777902993	Jeff Schaller	getdemusapp\.com
+1777903014	Jeff Schaller	gettelelatino\.com
+1777903116	Jeff Schaller	theaaina\.digital
+1777904641	Jeff Schaller	trustsig\.eu
+1777915641	Jeff Schaller	nxdeep\.com
+1777917524	Dan Getz	aidlensai\.com

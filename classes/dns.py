@@ -5,7 +5,7 @@ import dns.resolver
 import dns.rdatatype
 
 
-def dns_resolve(domain: str, records: List[str] = ['A', 'AAAA']) -> list:
+def dns_resolve(domain: str, records: list[str] = ['A', 'AAAA']) -> list:
     addrs = []
 
     resolver = dns.resolver.Resolver(configure=False)

@@ -188,7 +188,7 @@ def sanitize_title(title_unescaped: str) -> str:
     return regex.sub('(https?://|\n)', '', escape_markdown(title_unescaped).replace('\n', u'\u23CE'))
 
 
-def get_user_from_list_command(cmd: str) -> Tuple[int, str]:  # for example, !!/addblu is a list command
+def get_user_from_list_command(cmd: str) -> tuple[int, str]:  # for example, !!/addblu is a list command
     cmd_merged_spaces = regex.sub("\\s+", " ", cmd)
     cmd_parts = cmd_merged_spaces.split(" ")
 
